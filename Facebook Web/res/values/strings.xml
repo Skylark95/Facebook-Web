@@ -14,5 +14,11 @@
     <string name="alert_logout_message">Clear cookies and logout?</string>
     <string name="alert_yes_button">Yes</string>
     <string name="alert_no_button">No</string>
+    <string name="pref_source_code_summ">Click here to view the source code</string><string name="pref_source_code">Open Source App by Skylark95</string>
+    <string name="pref_app_settings_title">App Settings</string>
+    <string name="pref_about_title">About</string>
+    <string name="pref_hide_action_bar">Hide Action Bar</string>
+    <string name="pref_hide_action_bar_summ">Long press the screen to launch the settings menu after enabling</string>
+    <string name="progress_dialog_loading">Loading...</string>
 
 </resources>

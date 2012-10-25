@@ -1,6 +1,7 @@
 package com.skylark95.facebookweb.webview;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 

@@ -38,8 +38,15 @@ public final class R {
         public static final int menu_logout=0x7f05000a;
         public static final int menu_refresh=0x7f050007;
         public static final int menu_settings=0x7f050001;
+        public static final int pref_about_title=0x7f050012;
+        public static final int pref_app_settings_title=0x7f050011;
+        public static final int pref_hide_action_bar=0x7f050013;
+        public static final int pref_hide_action_bar_summ=0x7f050014;
         public static final int pref_location=0x7f050008;
         public static final int pref_location_summ=0x7f050009;
+        public static final int pref_source_code=0x7f050010;
+        public static final int pref_source_code_summ=0x7f05000f;
+        public static final int progress_dialog_loading=0x7f050015;
         public static final int title_activity_primary_web_view=0x7f050004;
         public static final int title_activity_settings=0x7f050006;
     }

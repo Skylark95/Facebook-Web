@@ -1,5 +1,7 @@
 package com.skylark95.facebookweb.activity;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,9 +9,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
@@ -35,7 +40,31 @@ public class PrimaryWebViewActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		applyWebViewSettings();
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		
+		showOrHideActionBar(preferences);
+		applyWebViewSettings(preferences);
+	}
+
+	@TargetApi(11)
+	private void showOrHideActionBar(SharedPreferences preferences) {
+		boolean hideActionBar = preferences.getBoolean(SettingsActivity.KEY_PREF_HIDE_ACTION_BAR, false);
+		
+		ActionBar actionBar = getActionBar();
+		
+		if (hideActionBar && actionBar.isShowing()) {
+			actionBar.hide();
+			registerForContextMenu(getCurrentFocus());
+		} else if (!hideActionBar && !actionBar.isShowing()) {
+			actionBar.show();
+			unregisterForContextMenu(getCurrentFocus());
+		}
+	}
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		getMenuInflater().inflate(R.menu.activity_primary_web_view, menu);
 	}
 
 	@Override
@@ -43,9 +72,32 @@ public class PrimaryWebViewActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_primary_web_view, menu);
 		return true;
 	}
+	
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		boolean retVal = onMenuItemSelected(item); 
+		
+		if (retVal) {
+			return retVal;
+		} else {
+			return super.onContextItemSelected(item);
+		}
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean retVal = onMenuItemSelected(item); 
+		
+		if (retVal) {
+			return retVal;
+		} else {
+			return super.onOptionsItemSelected(item);
+		}
+		 
+	}
+	
+	private boolean onMenuItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.menu_settings:
 				showSettings();
@@ -57,7 +109,7 @@ public class PrimaryWebViewActivity extends Activity {
 				showLogoutAlert();
 				return true;
 			default:
-				return super.onOptionsItemSelected(item);
+				return false;
 		}
 	}
 	
@@ -108,7 +160,8 @@ public class PrimaryWebViewActivity extends Activity {
 	}
 
 	private void loadWebView() {
-		applyWebViewSettings();
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		applyWebViewSettings(preferences);
 		
 		webView.setWebViewClient(new FacebookWebViewClient(this));
 		webView.setWebChromeClient(new FacebookWebChromeClient(this));
@@ -116,8 +169,7 @@ public class PrimaryWebViewActivity extends Activity {
 		webView.loadUrl(getString(R.string.facebook_home_url));
 	}
 
-	private void applyWebViewSettings() {
-		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+	private void applyWebViewSettings(SharedPreferences preferences) {
 		boolean shareLocation = preferences.getBoolean(SettingsActivity.KEY_PREF_LOCATION, true);
 		
 		WebSettings webSettings = webView.getSettings();
