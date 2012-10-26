@@ -1,0 +1,14 @@
+10-25 22:24:22.373: D/libEGL(20054): loaded /system/lib/egl/libEGL_tegra.so
+10-25 22:24:22.713: D/libEGL(20054): loaded /system/lib/egl/libGLESv1_CM_tegra.so
+10-25 22:24:22.723: D/libEGL(20054): loaded /system/lib/egl/libGLESv2_tegra.so
+10-25 22:24:22.743: D/OpenGLRenderer(20054): Enabling debug mode 0
+10-25 22:24:37.853: I/Choreographer(20054): Skipped 85 frames!  The application may be doing too much work on its main thread.
+10-25 22:24:40.803: D/TilesManager(20054): new EGLContext from framework: 6654acd0 
+10-25 22:24:40.803: D/GLWebViewState(20054): Reinit shader
+10-25 22:24:40.813: E/SQLiteLog(20054): (14) cannot open file at line 30174 of [00bb9c9ce4]
+10-25 22:24:40.813: E/SQLiteLog(20054): (14) os_unix.c:30174: (2) open(/CachedGeoposition.db) - 
+10-25 22:24:40.813: D/WebKit(20054): ERROR: 
+10-25 22:24:40.813: D/WebKit(20054): SQLite database failed to load from /CachedGeoposition.db
+10-25 22:24:40.813: D/WebKit(20054): Cause - unable to open database file
+10-25 22:24:40.813: D/WebKit(20054): external/webkit/Source/WebCore/platform/sql/SQLiteDatabase.cpp(71) : bool WebCore::SQLiteDatabase::open(const WTF::String&, bool)
+10-25 22:24:40.973: D/GLWebViewState(20054): Reinit transferQueue

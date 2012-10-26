@@ -1,0 +1,40 @@
+10-25 22:21:56.403: E/Trace(8053): error opening trace file: No such file or directory (2)
+10-25 22:21:57.163: D/dalvikvm(8053): GC_FOR_ALLOC freed 85K, 21% free 3847K/4864K, paused 56ms, total 56ms
+10-25 22:21:57.264: D/webcoreglue(8053): netstack: Memory Cache feature is OFF
+10-25 22:21:57.474: D/libEGL(8053): loaded /system/lib/egl/libEGL_adreno200.so
+10-25 22:21:57.504: D/libEGL(8053): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+10-25 22:21:57.514: D/libEGL(8053): loaded /system/lib/egl/libGLESv2_adreno200.so
+10-25 22:21:57.524: I/Adreno200-EGL(8053): <qeglDrvAPI_eglInitialize:294>: EGL 1.4 QUALCOMM build: AU_LINUX_ANDROID_JB.04.01.01.00.036_msm8960_JB_CL2644550_release_AU (CL2644550)
+10-25 22:21:57.524: I/Adreno200-EGL(8053): Build Date: 07/31/12 Tue
+10-25 22:21:57.524: I/Adreno200-EGL(8053): Local Branch: 
+10-25 22:21:57.524: I/Adreno200-EGL(8053): Remote Branch: quic/master
+10-25 22:21:57.524: I/Adreno200-EGL(8053): Local Patches: NONE
+10-25 22:21:57.524: I/Adreno200-EGL(8053): Reconstruct Branch: AU_LINUX_ANDROID_JB.04.01.01.00.036 +  NOTHING
+10-25 22:21:57.544: V/chromium(8053): external/chromium/net/host_resolver_helper/host_resolver_helper.cc:66: [1025/222157:INFO:host_resolver_helper.cc(66)] DNSPreResolver::Init got hostprovider:0x00000000
+10-25 22:21:57.544: V/chromium(8053): external/chromium/net/base/host_resolver_impl.cc:1510: [1025/222157:INFO:host_resolver_impl.cc(1510)] HostResolverImpl::SetPreresolver preresolver:0x50d8dd98
+10-25 22:21:57.544: D/(8053): dl error message Cannot load library: load_library[1118]: Library 'libtcpfinaggr.so' not found
+10-25 22:21:57.564: D/Socket_Pool(8053): Failed to create TCP Fin Aggregation interface.
+10-25 22:21:57.564: D/Socket_Pool(8053): netstack: CloseUnusedSockets is ON
+10-25 22:21:57.564: D/Socket_Pool(8053): netstack: system net.statistics value: 0
+10-25 22:21:57.564: D/Socket_Pool(8053): Failed to create TCP Fin Aggregation interface.
+10-25 22:21:57.574: D/Socket_Pool(8053): netstack: CloseUnusedSockets is ON
+10-25 22:21:57.574: D/Socket_Pool(8053): netstack: system net.statistics value: 0
+10-25 22:21:57.574: D/(8053): external/chromium/net/http/http_getzip_factory.cc: Failed to construct GETzip manager, didn't find the library!
+10-25 22:21:57.714: D/OpenGLRenderer(8053): Enabling debug mode 0
+10-25 22:21:57.984: D/netstack(8053): netstack: Request Priority is ON
+10-25 22:21:58.615: V/chromium(8053): external/chromium/net/disk_cache/hostres_plugin_bridge.cc:52: [1025/222158:INFO:hostres_plugin_bridge.cc(52)] StatHubCreateHostResPlugin initializing...
+10-25 22:21:58.615: V/chromium(8053): external/chromium/net/disk_cache/hostres_plugin_bridge.cc:68: [1025/222158:INFO:hostres_plugin_bridge.cc(68)] netstack: Failed to open plugin:libdnshostprio.so
+10-25 22:21:58.615: V/chromium(8053): external/chromium/net/disk_cache/hostres_plugin_bridge.cc:73: [1025/222158:INFO:hostres_plugin_bridge.cc(73)] netstack: Failed to find symbols in plugin: libdnshostprio.so
+10-25 22:21:58.615: E/chromium(8053): external/chromium/net/disk_cache/stat_hub.cc:216: [1025/222158:ERROR:stat_hub.cc(216)] StatHub::Init - App com.skylark95.facebookweb isn't supported.
+10-25 22:21:58.615: V/chromium(8053): external/chromium/net/disk_cache/hostres_plugin_bridge.cc:73: [1025/222158:INFO:hostres_plugin_bridge.cc(73)] netstack: Failed to find symbols in plugin: libdnshostprio.so
+10-25 22:21:58.615: E/chromium(8053): external/chromium/net/disk_cache/stat_hub.cc:216: [1025/222158:ERROR:stat_hub.cc(216)] StatHub::Init - App com.skylark95.facebookweb isn't supported.
+10-25 22:21:58.615: D/(8053): Failed to load DoObserveConnections symbol in tcp-connections.so
+10-25 22:22:00.417: D/TilesManager(8053): new EGLContext from framework: 51ce3c48 
+10-25 22:22:00.417: D/GLWebViewState(8053): Reinit shader
+10-25 22:22:00.477: E/SQLiteLog(8053): (14) cannot open file at line 30174 of [00bb9c9ce4]
+10-25 22:22:00.477: E/SQLiteLog(8053): (14) os_unix.c:30174: (2) open(/CachedGeoposition.db) - 
+10-25 22:22:00.477: D/WebKit(8053): ERROR: 
+10-25 22:22:00.477: D/WebKit(8053): SQLite database failed to load from /CachedGeoposition.db
+10-25 22:22:00.477: D/WebKit(8053): Cause - unable to open database file
+10-25 22:22:00.477: D/WebKit(8053): external/webkit/Source/WebCore/platform/sql/SQLiteDatabase.cpp(71) : bool WebCore::SQLiteDatabase::open(const WTF::String&, bool)
+10-25 22:22:01.027: D/GLWebViewState(8053): Reinit transferQueue
