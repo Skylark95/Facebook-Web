@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.skylark95.facebookweb.R;
 
@@ -15,11 +16,22 @@ public class FacebookWebViewClient extends WebViewClient {
 	private Activity activity;
 	private ProgressDialog progressDialog;
 	
-	public FacebookWebViewClient(Activity activity) {
+	public FacebookWebViewClient(Activity activity, WebView webView) {
 		this.activity = activity;
-		progressDialog = new ProgressDialog(activity);
+		createProgressDialog(activity, webView);
+	}
+
+	private void createProgressDialog(final Activity activity, final WebView webView) {
+		progressDialog = new ProgressDialog(activity) {
+			@Override
+			public void onBackPressed() {
+				Toast.makeText(activity, activity.getString(R.string.toast_stopping), Toast.LENGTH_SHORT).show();
+				webView.stopLoading();
+				super.onBackPressed();
+			}
+		};
+		
 		progressDialog.setMessage(activity.getString(R.string.progress_dialog_loading));
-		progressDialog.setCancelable(false);
 	}
 
 	@Override

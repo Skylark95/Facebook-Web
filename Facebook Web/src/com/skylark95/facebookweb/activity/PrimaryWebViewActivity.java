@@ -49,15 +49,14 @@ public class PrimaryWebViewActivity extends Activity {
 	@TargetApi(11)
 	private void showOrHideActionBar(SharedPreferences preferences) {
 		boolean hideActionBar = preferences.getBoolean(SettingsActivity.KEY_PREF_HIDE_ACTION_BAR, false);
-		
 		ActionBar actionBar = getActionBar();
 		
 		if (hideActionBar && actionBar.isShowing()) {
 			actionBar.hide();
-			registerForContextMenu(getCurrentFocus());
+			registerForContextMenu(webView);
 		} else if (!hideActionBar && !actionBar.isShowing()) {
 			actionBar.show();
-			unregisterForContextMenu(getCurrentFocus());
+			unregisterForContextMenu(webView);
 		}
 	}
 	
@@ -163,7 +162,7 @@ public class PrimaryWebViewActivity extends Activity {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		applyWebViewSettings(preferences);
 		
-		webView.setWebViewClient(new FacebookWebViewClient(this));
+		webView.setWebViewClient(new FacebookWebViewClient(this, webView));
 		webView.setWebChromeClient(new FacebookWebChromeClient(this));
 		
 		webView.loadUrl(getString(R.string.facebook_home_url));

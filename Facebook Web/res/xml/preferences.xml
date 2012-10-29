@@ -14,6 +14,20 @@
             android:key="pref_hide_action_bar"
             android:summary="@string/pref_hide_action_bar_summ"
             android:title="@string/pref_hide_action_bar" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_twitter"
+            android:summary="@string/pref_twitter_summ"
+            android:title="@string/pref_twitter" 
+            android:enabled="false" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_twitter_swipe"
+            android:summary="@string/pref_twitter_swipe_summ"
+            android:title="@string/pref_twitter_swipe" 
+            android:dependency="pref_twitter" 
+            android:disableDependentsState="false"
+            android:enabled="false" />
     </PreferenceCategory>
     <PreferenceCategory
         android:key="pref_about_title"

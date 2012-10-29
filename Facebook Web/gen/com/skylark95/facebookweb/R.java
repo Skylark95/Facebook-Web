@@ -46,9 +46,14 @@ public final class R {
         public static final int pref_location_summ=0x7f050009;
         public static final int pref_source_code=0x7f050010;
         public static final int pref_source_code_summ=0x7f05000f;
+        public static final int pref_twitter=0x7f050016;
+        public static final int pref_twitter_summ=0x7f050017;
+        public static final int pref_twitter_swipe=0x7f050018;
+        public static final int pref_twitter_swipe_summ=0x7f050019;
         public static final int progress_dialog_loading=0x7f050015;
         public static final int title_activity_primary_web_view=0x7f050004;
         public static final int title_activity_settings=0x7f050006;
+        public static final int toast_stopping=0x7f05001a;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;
