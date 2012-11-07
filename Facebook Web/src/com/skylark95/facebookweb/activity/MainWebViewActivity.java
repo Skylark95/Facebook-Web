@@ -17,23 +17,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.webkit.CookieManager;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.skylark95.facebookweb.R;
-import com.skylark95.facebookweb.webview.FacebookWebChromeClient;
-import com.skylark95.facebookweb.webview.FacebookWebViewClient;
+import com.skylark95.facebookweb.webview.WebViewFactory;
 
-public class PrimaryWebViewActivity extends Activity {
+public class MainWebViewActivity extends Activity {
 	
-	private WebView webView;
+	private WebView facebookWebView;
+	private WebView twitterWebView;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_PROGRESS);
-		setContentView(R.layout.activity_primary_web_view);
-		webView = (WebView) findViewById(R.id.webview);
+		setContentView(R.layout.activity_main_web_view);
+		facebookWebView = (WebView) findViewById(R.id.webview);
 		loadWebView();
 	}
 	
@@ -53,22 +52,22 @@ public class PrimaryWebViewActivity extends Activity {
 		
 		if (hideActionBar && actionBar.isShowing()) {
 			actionBar.hide();
-			registerForContextMenu(webView);
+			registerForContextMenu(facebookWebView);
 		} else if (!hideActionBar && !actionBar.isShowing()) {
 			actionBar.show();
-			unregisterForContextMenu(webView);
+			unregisterForContextMenu(facebookWebView);
 		}
 	}
 	
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-		getMenuInflater().inflate(R.menu.activity_primary_web_view, menu);
+		getMenuInflater().inflate(R.menu.activity_main_web_view, menu);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_primary_web_view, menu);
+		getMenuInflater().inflate(R.menu.activity_main_web_view, menu);
 		return true;
 	}
 	
@@ -102,7 +101,7 @@ public class PrimaryWebViewActivity extends Activity {
 				showSettings();
 				return true;
 			case R.id.menu_refresh:
-				webView.reload();
+				facebookWebView.reload();
 				return true;
 			case R.id.menu_logout:
 				showLogoutAlert();
@@ -132,17 +131,17 @@ public class PrimaryWebViewActivity extends Activity {
 	
 	private void logout() {
 		CookieManager.getInstance().removeAllCookie();
-		webView.clearCache(true);
-		webView.clearFormData();
-		webView.clearHistory();
+		facebookWebView.clearCache(true);
+		facebookWebView.clearFormData();
+		facebookWebView.clearHistory();
 		loadWebView();
 	}
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (webView.canGoBack()) {
-				webView.goBack();
+			if (facebookWebView.canGoBack()) {
+				facebookWebView.goBack();
 				return false;
 			} else {
 				finish();
@@ -162,18 +161,12 @@ public class PrimaryWebViewActivity extends Activity {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		applyWebViewSettings(preferences);
 		
-		webView.setWebViewClient(new FacebookWebViewClient(this, webView));
-		webView.setWebChromeClient(new FacebookWebChromeClient(this));
-		
-		webView.loadUrl(getString(R.string.facebook_home_url));
+		WebViewFactory.build(this, preferences, facebookWebView);		
+		facebookWebView.loadUrl(getString(R.string.facebook_home_url));
 	}
 
 	private void applyWebViewSettings(SharedPreferences preferences) {
-		boolean shareLocation = preferences.getBoolean(SettingsActivity.KEY_PREF_LOCATION, true);
-		
-		WebSettings webSettings = webView.getSettings();
-		webSettings.setJavaScriptEnabled(true);
-		webSettings.setGeolocationEnabled(shareLocation);
+		WebViewFactory.applySettings(preferences, facebookWebView);
 	}
 
 }

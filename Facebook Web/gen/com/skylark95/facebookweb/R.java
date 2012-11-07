@@ -21,10 +21,10 @@ public final class R {
         public static final int webview=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_primary_web_view=0x7f030000;
+        public static final int activity_main_web_view=0x7f030000;
     }
     public static final class menu {
-        public static final int activity_primary_web_view=0x7f070000;
+        public static final int activity_main_web_view=0x7f070000;
     }
     public static final class string {
         public static final int alert_logout_message=0x7f05000c;

@@ -11,12 +11,12 @@ import android.widget.Toast;
 
 import com.skylark95.facebookweb.R;
 
-public class FacebookWebViewClient extends WebViewClient {
+class FacebookWebViewClient extends WebViewClient {
 	
 	private Activity activity;
 	private ProgressDialog progressDialog;
 	
-	public FacebookWebViewClient(Activity activity, WebView webView) {
+	FacebookWebViewClient(Activity activity, WebView webView) {
 		this.activity = activity;
 		createProgressDialog(activity, webView);
 	}

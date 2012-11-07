@@ -5,11 +5,11 @@ import android.app.ProgressDialog;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-public class FacebookWebChromeClient extends WebChromeClient {
+class FacebookWebChromeClient extends WebChromeClient {
 	
 	private Activity activity;
 
-	public FacebookWebChromeClient(Activity activity) {
+	FacebookWebChromeClient(Activity activity) {
 		this.activity = activity;
 	}
 	

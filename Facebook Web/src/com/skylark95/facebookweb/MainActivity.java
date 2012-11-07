@@ -1,6 +1,6 @@
 package com.skylark95.facebookweb;
 
-import com.skylark95.facebookweb.activity.PrimaryWebViewActivity;
+import com.skylark95.facebookweb.activity.MainWebViewActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     }
     
     private void launchWebView() {
-    	Intent intent = new Intent(this, PrimaryWebViewActivity.class);
+    	Intent intent = new Intent(this, MainWebViewActivity.class);
     	startActivity(intent);
     }
     

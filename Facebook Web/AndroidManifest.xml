@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.PrimaryWebViewActivity"
+            android:name=".activity.MainWebViewActivity"
             android:label="@string/title_activity_primary_web_view" >
         </activity>
         <activity
