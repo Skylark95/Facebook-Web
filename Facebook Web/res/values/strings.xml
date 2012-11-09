@@ -8,13 +8,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_settings">Settings</string>
     <string name="menu_refresh">Refresh</string>
-    <string name="pref_location">Location Services</string><string name="pref_location_summ">Share your location with Facebook (and Twitter)</string>
+    <string name="pref_location">Location Services</string>
+    <string name="pref_location_summ">Share your location with Facebook (and Twitter)</string>
     <string name="menu_logout">Logout</string>
     <string name="alert_logout_title">Logout?</string>
     <string name="alert_logout_message">Clear cookies and logout?</string>
     <string name="alert_yes_button">Yes</string>
     <string name="alert_no_button">No</string>
-    <string name="pref_source_code_summ">Click here to view the source code</string><string name="pref_source_code">Open Source App by Skylark95</string>
+    <string name="pref_source_code_summ">Click here to view the source code</string>
+    <string name="pref_source_code">Open Source App by Skylark95</string>
     <string name="pref_app_settings_title">App Settings</string>
     <string name="pref_about_title">About</string>
     <string name="pref_hide_action_bar">Hide Action Bar</string>
@@ -25,5 +27,6 @@
     <string name="pref_twitter_swipe">Enable Swipe</string>
     <string name="pref_twitter_swipe_summ">(TODO) Swipe left or right to switch from Twitter or Facebook</string>
     <string name="toast_stopping">Stopping...</string>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>
